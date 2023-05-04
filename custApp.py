@@ -22,7 +22,7 @@ table = 'customer'
 
 @app.route("/",methods=['GET','POST'])
 def home():
-    return render_template('seotech-html/index.html')
+    return render_template('index.html')
 
 @app.route("/addCust",methods=['POST'])
 def custReg():
