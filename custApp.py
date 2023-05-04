@@ -15,14 +15,14 @@ db_conn = connections.Connection(
     user=customuser,
     password=custompass,
     db=customdb
-
 )
+
 output = {}
 table = 'customer'
 
 @app.route("/",methods=['GET','POST'])
 def home():
-    return render_template('index.html')
+    return render_template('seotech-html/index.html')
 
 @app.route("/addCust",methods=['POST'])
 def custReg():
@@ -69,7 +69,7 @@ def custReg():
         cursor.close()
 
     print("all modification done...")
-    return render_template('profile.html', name=cust_name)
+    return render_template('seotech-html/profile.html', name=cust_name)
 
 if __name__ == '__main__':
     app.run(host ='0.0.0.0',port=80, debug=True)
